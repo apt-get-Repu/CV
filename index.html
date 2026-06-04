@@ -1,233 +1,647 @@
 <!DOCTYPE html>
-<html lang="es-LA">
-<!-- HEAD - Información importante para desarrolladores -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roberto Torres CV</title>
+<html class="" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CV | Roberto Torres</title>
     <!-- Fuentes a trabajar-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amarante&family=Faculty+Glyphic&display=swap" rel="stylesheet">
     <!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+          tailwind.config = {
+            darkMode: "class",
+            theme: {
+              extend: {
+                "colors": {
+                        "on-tertiary-fixed": "#2c1600",
+                        "tertiary-fixed-dim": "#edbe8e",
+                        "on-secondary-container": "#626751",
+                        "on-tertiary-fixed-variant": "#61401b",
+                        "on-surface": "#1c1c16",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#e0e5ca",
+                        "surface-dim": "#dddad0",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f4f1e6",
+                        "secondary": "#5c614c",
+                        "on-background": "#1c1c16",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#c4c9af",
+                        "primary-container": "#1b1b1b",
+                        "outline": "#747878",
+                        "on-primary-fixed": "#1b1b1b",
+                        "primary": "#000000",
+                        "surface-container-low": "#f7f4e9",
+                        "surface-bright": "#fcf9ee",
+                        "primary-fixed": "#e2e2e2",
+                        "surface-container-high": "#ebe8dd",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#2c1600",
+                        "surface-container": "#f1eee3",
+                        "inverse-surface": "#31312a",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "on-tertiary-container": "#a57c52",
+                        "on-primary-container": "#848484",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#444935",
+                        "background": "#fcf9ee",
+                        "surface-tint": "#5e5e5e",
+                        "on-surface-variant": "#4c4546",
+                        "on-secondary-fixed": "#191d0d",
+                        "surface-container-highest": "#e5e3d8",
+                        "tertiary-fixed": "#ffdcbd",
+                        "inverse-primary": "#c6c6c6",
+                        "outline-variant": "#cfc4c5",
+                        "on-error": "#ffffff",
+                        "tertiary": "#000000",
+                        "on-secondary": "#ffffff",
+                        "surface": "#fcf9ee",
+                        "secondary-container": "#e0e5ca",
+                        "surface-variant": "#e5e3d8",
+                        "paper-overlay": "rgba(255, 255, 255, 0.03)",
+                        "on-primary-fixed-variant": "#474747"
+                },
+                "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                },
+                "spacing": {
+                        "container-max": "1140px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "section-gap": "80px",
+                        "unit": "8px"
+                },
+                "fontFamily": {
+                        "headline-md": ["Amarante"],
+                        "label-caps": ["Faculty Glyphic"],
+                        "display-lg-mobile": ["Amarante"],
+                        "display-lg": ["Amarante"],
+                        "body-lg": ["Faculty Glyphic"],
+                        "quote": ["Amarante"],
+                        "headline-sm": ["Amarante"],
+                        "body-md": ["Faculty Glyphic"]
+                },
+                "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "quote": ["22px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                }
+              },
+            },
+          }
+    </script>
+<style>
+        /* Global Styles */
+        .double-divider { border-top: 2px solid currentColor; border-bottom: 1px solid currentColor; height: 5px; margin: 24px 0; }
+        .grayscale-img { filter: grayscale(100%) contrast(110%); transition: filter 0.4s ease, transform 0.4s ease; }
+        .grayscale-img:hover { filter: grayscale(0%) contrast(100%); }
+        .nav-link-hover:hover { color: #BC544B !important; }
+        
+        /* Curtain Transition Styles */
+        #theme-curtain {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: #1c1c16;
+            pointer-events: none;
+            transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        #theme-curtain.active {
+            transform: translateX(200%);
+        }
+
+        /* Hero Spotlight common vars */
+        #inicio { 
+            --mouse-x: 50%; 
+            --mouse-y: 50%;
+        }
+
+        /* Light Mode Specifics */
+        body:not(.dark) #inicio { 
+            background-color: #fcf9ee;
+        }
+
+        /* Light Mode Discovery: extreme subtlety matching dark mode */
+        body:not(.dark) .light-spotlight-discovery {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background-image: url('https://lh3.googleusercontent.com/aida/ADBb0uiwtzPmcXw4yy-G4rAZ3wd3s6oo0oavgZRuG5UsLG7fzMBAzeIKVOb_7wB6aJax3Y0e_wGxi8lyx_PH_e-z9KQ_NfBJAZjYeRDLENLuE3ijNSjOnZQNjdnif1Le3ls5UM26r-eFlBqbWEc9f6qnS0dt28KKh_wImndJoE9z8-56084vW1GMHXZLItEkwXNWRZtopbSKtH3l7HPAl5a-VTJthVVtKBOdEOO-UppSG_4EiVFoNTB-3-29dGc');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.08; /* Dramatically reduced for subtlety */
+            mask-image: radial-gradient( circle 500px at var(--mouse-x) var(--mouse-y), rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100% );
+            -webkit-mask-image: radial-gradient( circle 500px at var(--mouse-x) var(--mouse-y), rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100% );
+            transition: opacity 0.5s ease;
+        }
+
+        body:not(.dark) .hero-spotlight-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+            background: radial-gradient(
+                circle 600px at var(--mouse-x) var(--mouse-y),
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 0.005) 60%,
+                rgba(0, 0, 0, 0.01) 100%
+            );
+            mix-blend-mode: multiply;
+        }
+
+        body:not(.dark) .btn-archive:hover { background-color: #000000; color: #fcf9ee; }
+
+        /* Dark Mode Specifics */
+        html.dark .paper-grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9998;
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuA_i-kU5TgDUX7MbNbFEMAonnOQPIIIkEXTvU2c2uI1MZeMessIB8D5a5xa0VIvGq70VVDP7AHBDYwwg6Bnq8rlr3fjK5izzfcJlqYpMIY0JWKkIgkJZjWmVc6AJY6-mEPhhiYAjVXZ6RKDkx0SJBG9kpJpsYs51RN5vD96UHrXoaVWlvpDVyH4iCLHiiY1gc8imkRANvLxMDpwRhi7VDk9KV8e5zSKMfgqIwkw2wEObcgDohTjXCYFccfK56O_DD1Uh_6IUE6O0xU);
+            opacity: 0.05;
+            mix-blend-mode: overlay;
+        }
+
+        html.dark body {
+            background-color: #1c1c16;
+            color: #fcf9ee;
+        }
+
+        /* SCREEN_10 Pattern for Dark Mode Discovery */
+        html.dark .spotlight-pattern {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background-image: src(static/images/bg.png);
+            background-size: 320px 320px;
+            background-repeat: repeat;
+            opacity: 0.05;
+            mask-image: radial-gradient( circle 600px at var(--mouse-x) var(--mouse-y), rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100% );
+            -webkit-mask-image: radial-gradient( circle 600px at var(--mouse-x) var(--mouse-y), rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100% );
+            transition: opacity 0.5s ease;
+        }
+
+        html.dark #inicio {
+            background-color: #151512;
+        }
+
+        html.dark .btn-archive:hover {
+            background-color: #fcf9ee;
+            color: #1c1c16;
+        }
+
+        /* Dark mode overrides */
+        html.dark nav { background-color: rgba(28, 28, 22, 0.95); border-color: #fcf9ee; }
+        html.dark .text-primary { color: #fcf9ee; }
+        html.dark .bg-primary { background-color: #fcf9ee; }
+        html.dark .border-primary { border-color: #fcf9ee; }
+        html.dark .text-on-surface-variant { color: #c4c9af; }
+        html.dark .bg-surface-container { background-color: #1c1c16; }
+        html.dark .bg-surface-container-low { background-color: #151512; }
+        html.dark .bg-surface-container-high { background-color: #262621; }
+        html.dark .border-outline-variant { border-color: #4c4546; }
+    </style>
 </head>
 
-<!-- BODY - Información importante para el usuario -->
-
-<body class="bg-dark" style="font-family: 'Amarante', sans-serif;">
-
-<!--ALERTA IMPORTANTE-->
-<div class="alert alert-warning alert-dismissible fade show text-center item-center mb-0 rounded-0 border-0 shadow-sm " role="alert">
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64"><!-- Icon from Emoji One (v1) by Emoji One - https://creativecommons.org/licenses/by-sa/4.0/ --><path fill="#ffdd15" d="M63.37 53.52Q49.287 27.795 35.2 2.07a3.687 3.687 0 0 0-6.522 0C19.289 19.22 9.892 36.37.508 53.52c-1.453 2.649.399 6.083 3.258 6.083h56.35c1.584 0 2.648-.853 3.203-2.01c.698-1.102.885-2.565.055-4.075"/><path fill="#1f2e35" d="m28.917 34.477l-.889-13.262q-.247-3.875-.246-5.565c0-1.534.4-2.727 1.202-3.588q1.207-1.285 3.175-1.286c1.583 0 2.646.551 3.178 1.646q.807 1.652.809 4.751q0 1.824-.198 3.708l-1.19 13.649q-.193 2.439-.827 3.739c-.426.871-1.128 1.301-2.109 1.301c-.992 0-1.69-.419-2.072-1.257c-.393-.841-.668-2.12-.833-3.836m3.072 18.217q-1.687.002-2.947-1.093q-1.26-1.093-1.26-3.058c0-1.143.4-2.12 1.202-2.921c.805-.806 1.786-1.206 2.951-1.206s2.153.4 2.977 1.206c.815.801 1.234 1.778 1.234 2.921c0 1.29-.419 2.308-1.246 3.044a4.25 4.25 0 0 1-2.911 1.107"/></svg>
-    <strong>Perfil está disponible para contratación</strong>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64"><!-- Icon from Emoji One (v1) by Emoji One - https://creativecommons.org/licenses/by-sa/4.0/ --><path fill="#ffdd15" d="M63.37 53.52Q49.287 27.795 35.2 2.07a3.687 3.687 0 0 0-6.522 0C19.289 19.22 9.892 36.37.508 53.52c-1.453 2.649.399 6.083 3.258 6.083h56.35c1.584 0 2.648-.853 3.203-2.01c.698-1.102.885-2.565.055-4.075"/><path fill="#1f2e35" d="m28.917 34.477l-.889-13.262q-.247-3.875-.246-5.565c0-1.534.4-2.727 1.202-3.588q1.207-1.285 3.175-1.286c1.583 0 2.646.551 3.178 1.646q.807 1.652.809 4.751q0 1.824-.198 3.708l-1.19 13.649q-.193 2.439-.827 3.739c-.426.871-1.128 1.301-2.109 1.301c-.992 0-1.69-.419-2.072-1.257c-.393-.841-.668-2.12-.833-3.836m3.072 18.217q-1.687.002-2.947-1.093q-1.26-1.093-1.26-3.058c0-1.143.4-2.12 1.202-2.921c.805-.806 1.786-1.206 2.951-1.206s2.153.4 2.977 1.206c.815.801 1.234 1.778 1.234 2.921c0 1.29-.419 2.308-1.246 3.044a4.25 4.25 0 0 1-2.911 1.107"/></svg>
+<body class="bg-surface text-on-surface selection:bg-tertiary selection:text-on-tertiary transition-colors duration-500 relative">
+<!-- Transition Curtain -->
+<div id="theme-curtain"></div>
+<div class="paper-grain hidden dark:block"></div>
+<!-- Top Navigation -->
+<nav class="bg-surface/95 backdrop-blur-sm fixed top-0 w-full z-50 border-b transition-colors duration-500">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-20">
+<div class="font-headline-md text-headline-md uppercase tracking-tighter text-[#BC544B] transition-colors">
+    CV ONLINE
+            </div>
+<div class="hidden md:flex gap-8 items-center mx-auto">
+<a class="font-label-caps text-label-caps text-on-surface-variant transition-colors nav-link-hover" href="#inicio">INICIO</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant transition-colors nav-link-hover" href="#quien-soy">SOBRE MI</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant transition-colors nav-link-hover" href="#formacion">FORMACIÓN</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant transition-colors nav-link-hover" href="#experiencia">EXPERIENCIA</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant transition-colors nav-link-hover" href="#portafolio">PORTAFOLIO</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant transition-colors nav-link-hover" href="#contacto">CONTACTO</a>
+<!-- Theme Toggle Button -->
+<button class="flex items-center justify-center p-1 hover:text-primary transition-colors" id="theme-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Line Icons by Vjacheslav Trushkin - https://github.com/cyberalien/line-md/blob/master/license.txt --><defs><mask id="SVG2oZHmemU"><circle cx="7.5" cy="7.5" r="5.5" fill="#fff"/><circle cx="7.5" cy="7.5" r="5.5"><animate fill="freeze" attributeName="cx" dur="0.4s" values="7.5;11"/><animate fill="freeze" attributeName="r" dur="0.4s" values="5.5;6.5"/></circle></mask><mask id="SVG5KjW8XKI"><g fill="#fff"><circle cx="12" cy="9" r="5.5"><animate fill="freeze" attributeName="cy" begin="1s" dur="0.5s" values="9;15"/></circle><g fill-opacity="0"><use href="#SVGVFoRVwOl" transform="rotate(-75 12 15)"/><use href="#SVGVFoRVwOl" transform="rotate(-25 12 15)"/><use href="#SVGVFoRVwOl" transform="rotate(25 12 15)"/><use href="#SVGVFoRVwOl" transform="rotate(75 12 15)"/><set fill="freeze" attributeName="fill-opacity" begin="1.5s" to="1"/><animateTransform attributeName="transform" dur="5s" repeatCount="indefinite" type="rotate" values="0 12 15;50 12 15"/></g></g><path d="M0 10h26v5h-26z"/><path stroke="#fff" stroke-dasharray="26" stroke-dashoffset="26" stroke-width="2" d="M22 12h-22"><animate attributeName="d" dur="6s" repeatCount="indefinite" values="M22 12h-22;M24 12h-22;M22 12h-22"/><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.5s" dur="0.4s" values="26;0"/></path></mask><symbol id="SVGVFoRVwOl"><path d="M11 18h2L12 20z" opacity="0"><animate fill="freeze" attributeName="d" begin="1.5s" dur="0.4s" values="M11 18h2L12 20z;M10.5 21.5h3L12 24z"/><set fill="freeze" attributeName="opacity" begin="1.5s" to="1"/></path></symbol></defs><g fill="currentColor"><rect width="13" height="13" x="1" y="1" mask="url(#SVG2oZHmemU)"/><path d="M-2 11h28v13h-28z" mask="url(#SVG5KjW8XKI)" transform="rotate(-45 12 12)"/></g></svg>
+</button>
 </div>
-<!-- HEADER - Barra de navegación titular -->
-<header class="bg-dark text-white text-center py-5 shadow">
-    <div class="container py-3">
-        <h1 class="display-4 fw-bold mb-2">Roberto Torres</h1>
-        <h2 class="h4 fw-light text-warning mb-0">Profesor de Estado en historia, geografía y educación cívica | Developer Fullstack Javascript en formación</h2>
-    </div>
-</header>
-<!-- ASIDE - Información que ira a un costado -->
+<!-- Mobile Menu Icon -->
+<button class="md:hidden">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-20">
+    <!--ALERTA IMPORTANTE-->
+    <div class="alert alert-warning alert-dismissible fade show text-center item-center mb-0 rounded-0 border-0 shadow-sm " role="alert">
+        <strong>Perfil está disponible para contratación</strong>
+        </div>
+<!-- Section: Inicio (Hero) -->
+<section class="min-h-[819px] flex flex-col justify-center items-center text-center px-margin-mobile relative overflow-hidden transition-all duration-500" id="inicio">
+<!-- Discovery Layers for Light Mode -->
+<div class="light-spotlight-discovery dark:hidden"></div>
+<div class="hero-spotlight-overlay dark:hidden"></div>
+<!-- Discovery Layer for Dark Mode -->
+<div class="spotlight-pattern hidden dark:block"></div>
 
-<div class="container my-5">
-    <div class="row g-4">
-        <aside class="col-lg-4 col-md-5">
-            <div class="card border-0 shadow-sm mb-4 text-center pt-4 text-white bg-secondary">
-                <div class="card-body">
-                    <img src="static/img/Simbolo.png" alt="Foto Perfil Roberto Torres" class="img-fluid rounded-circle shadow-sm mb-3 border border-3 border-dark" style="max-width: 160px;">
-                    <h1 class="h3 fw-bold mb-1">Roberto Eusebio<br>Torres Cáceres</h1>
-                    <p class="text-light mb-3">CV </p>
-                    <p class="small text-start px-2">Soy un <strong>profesor de historia y ciencias sociales</strong> especializado en contextos de diversidad cultural y
-                        alta vulnerabilidad centrando la formación de los estudiantes en lo <em>académico, emocional y valórico</em>, a través de planes de
-                        estudio creativos y adaptado a la realidad del estudiantado buscando involucrarles en un enfoque territorial de educación.</p>
+<div class="max-w-4xl z-10 relative">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-6 text-[#BC544B] drop-shadow-sm">
+Roberto Torres</h1>
+<div class="w-24 h-px bg-[#BC544B] mx-auto mb-8 transition-colors"></div>
+<p class="font-headline-sm text-headline-sm italic text-on-surface-variant max-w-2xl mx-auto drop-shadow-sm">
+    Profesor de Estado en historia, geografía y educación cívica | Developer Fullstack Javascript en formación.
+                </p>
+<div class="mt-12">
+<a class="inline-flex items-center gap-2 font-label-caps text-label-caps rounded border-transparent px-10 py-4 btn-archive transition-all bg-surface/50 dark:bg-transparent backdrop-blur-[2px] dark:backdrop-blur-none" href="#quien-soy">
+                        INICIAR LECTURA <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 16l4-4l-1.4-1.4l-1.6 1.6V8h-2v4.2l-1.6-1.6L8 12zm0 6q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"/></svg>
+</a>
+</div>
+</div>
+<!-- Background -->
+<div class="absolute -bottom-10 left-0 w-full opacity-[0.05] select-none pointer-events-none z-10">
+<img alt="background"class="w-full h-full object-cover" src="static/images/bg.png">
+</div>
+</section>
+<!-- Section: Quién Soy -->
+<section class="py-section-gap px-margin-mobile md:px-gutter max-w-container-max mx-auto transition-colors duration-500" id="quien-soy">
+<div class="grid md:grid-cols-12 gap-12 items-start">
+<div class="md:col-span-5">
+<div class="aspect-[4/5] bg-surface-container-highest dark:bg-surface-container-high overflow-hidden rounded transition-all">
+<img alt="Roberto Torres Portrait" class="w-full h-full object-cover grayscale-img" src="static/images/me.jpg"/>
+</div>
+</div>
+<div class="md:col-span-7 flex flex-col justify-center">
+<div class="flex items-center gap-4 mb-2">
+<span class="font-label-caps text-label-caps">Introducción</span>
+<div class="w-16 h-[1px] bg-primary transition-colors"></div>
+</div>
+<h2 class="font-headline-md text-headline-md mb-8 text-[#BC544B]">Sobre mi</h2>
+<p class="font-body-lg text-body-lg text-on-surface mb-6 leading-relaxed transition-colors">
+    Soy un <strong>profesor de historia y ciencias sociales</strong> especializado en contextos de diversidad cultural y
+    alta vulnerabilidad centrando la formación de los estudiantes en lo <em>académico, emocional y valórico</em>, a través de planes de
+    estudio creativos y adaptado a la realidad del estudiantado buscando involucrarles en un enfoque territorial de educación.
+                    </p>
+<p class="font-body-lg text-body-lg text-on-surface mb-8 transition-colors">
+                        Debido a la constante hambre de conocimiento, me he dedicado ha profundizar diversos tipos de conocimiento para mejorar y aplicar
+los elementos base de mi formación profesional, certificandome como <strong>cuentacuentos</strong> ademas de dedicarme a la creación y modificación de <strong> juegos de mesa</strong>
+incluso involucrandome en el  <strong>desarrollo web fullstack en JavaScript</strong>, area en la que me encuentro formando hoy en día</p>
+    <!-- Seccion habilidades-->
+    <blockquote>
+    <section class="row g-8 mb-8 text-center items-center">
+        <div class="col-xl-6">
+            <div class="card border-0 shadow-sm h-100 bg-surface-container items-center">
+                <div class="card-body p-4 ">
+                    <h2 class="h5 mb-4 fw-bold">Habilidades Blandas</h2>
+                    <ul class="list-group list-group-flush border-0">
+                        <li class="list-group-item bg-transparent px-0 border-light d-flex align-items-center">
+                            <span class="badge bg-success rounded-circle p-2 me-3"><i class="bi bi-check"></i></span>
+                            Enseñanza y Mentoría
+                        </li>
+                        <li class="list-group-item bg-transparent px-0 border-light d-flex align-items-center">
+                            <span class="badge bg-success rounded-circle p-2 me-3"><i class="bi bi-check"></i></span>
+                            Atención a la diversidad
+                        </li>
+                        <li class="list-group-item bg-transparent px-0 border-light d-flex align-items-center">
+                            <span class="badge bg-success rounded-circle p-2 me-3"><i class="bi bi-check"></i></span>
+                            Liderazgo
+                        </li>
+                        <li class="list-group-item bg-transparent px-0 border-light d-flex align-items-center">
+                            <span class="badge bg-success rounded-circle p-2 me-3"><i class="bi bi-check"></i></span>
+                            Inteligencia emocional
+                        </li>
+                        <li class="list-group-item bg-transparent px-0 border-light d-flex align-items-center">
+                            <span class="badge bg-success rounded-circle p-2 me-3"><i class="bi bi-check"></i></span>
+                            Comunicación efectiva
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <!-- TABLE - Crear tablas -->
-            <div class="card border-0 shadow-sm text-light bg-secondary">
+        </div>
+        <div class="col-xl-4 items-center">
+            <div class="card border-0 shadow-sm h-100 text-black bg-surface-container items-center">
                 <div class="card-body p-4">
-                    <h3 class="card-title h5 mb-4 fw-bold text-uppercase text-white" style="letter-spacing: 1px;">Idiomas</h3>
-                    <div class="table-responsive">
-                        <table class="table table-borderless table-striped table-hover align-middle mb-0">
-                            <thead class="table-dark rounded-top">
-                            <tr>
-                                <th class="rounded-start">Idioma</th>
-                                <th class="rounded-end">Nivel</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="fw-medium">Español</td>
-                                <td><span class="badge bg-success">Nativo</span></td>
-                            </tr>
-                            <tr>
-                                <td class="fw-medium">Inglés</td>
-                                <td><span class="badge bg-secondary">Medio</span></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </aside>
-
-        <main class="col-lg-8 col-md-7">
-
-            <section class="card border-0 shadow-sm mb-4 text-white bg-secondary">
-                <div class="card-body p-4 p-md-5">
-
-                    <h2 class="card-title h4 mb-4 fw-bold border-bottom pb-3">Experiencia Laboral</h2>
-
-                    <div class="mb-4 position-relative">
-                        <h3 class="h5 fw-bold text-warning mb-1">Profesor Volante</h3>
-                        <p class="text-light small fw-bold mb-2">Boston College Maipú | 2022 - 2024</p>
-                        <p>Profesor de reemplazo <em>todas las asignaturas</em> del establecimiento en segundo ciclo y enseñanza media.</p>
-                    </div>
-
-                    <div class="mb-4 position-relative">
-                        <h3 class="h5 fw-bold text-warning mb-1">Asistente Docencia Universitaria</h3>
-                        <p class="text-light small fw-bold mb-2">Universidad de La Frontera | 2019</p>
-                        <p>He sido Docente asistente en formación de profesores en educación de adultos en la <em>Universidad de La Frontera</em>.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="card border-0 shadow-sm mb-4 text-white bg-secondary">
-                <div class="card-body p-4 p-md-5">
-                    <h2 class="card-title h4 mb-4 fw-bold text-warning border-bottom pb-3">Estudios Superiores</h2>
-                    <div class="d-flex align-items-center">
-                        <div class="bg-primary text-white rounded p-3 me-4 shadow-sm">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/>
-                                <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="h5 fw-bold mb-1">Profesor de Estado en historia, geografía y educación cívica</h3>
-                            <p class="small fw-bold mb-1">Universidad de La Frontera | Titulación: 2019</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="row g-4 mb-4 ">
-                <div class="col-xl-6">
-                    <div class="card border-0 shadow-sm h-100 text-white bg-secondary">
-                        <div class="card-body p-4 ">
-                            <h2 class="h5 mb-4 fw-bold">Habilidades Blandas</h2>
-                            <ul class="list-group list-group-flush border-0">
-                                <li class="list-group-item bg-transparent px-0 border-light d-flex align-items-center text-white">
-                                    <span class="badge bg-success rounded-circle p-2 me-3"><i class="bi bi-check"></i></span>
-                                    Enseñanza y Mentoría
-                                </li>
-                                <li class="list-group-item bg-transparent px-0 border-light d-flex align-items-center text-white">
-                                    <span class="badge bg-success rounded-circle p-2 me-3"><i class="bi bi-check"></i></span>
-                                    Atención a la diversidad
-                                </li>
-                                <li class="list-group-item bg-transparent px-0 border-light d-flex align-items-center text-white">
-                                    <span class="badge bg-success rounded-circle p-2 me-3"><i class="bi bi-check"></i></span>
-                                    Liderazgo
-                                </li>
-                                <li class="list-group-item bg-transparent px-0 border-light d-flex align-items-center text-white">
-                                    <span class="badge bg-success rounded-circle p-2 me-3"><i class="bi bi-check"></i></span>
-                                    Inteligencia emocional
-                                </li>
-                                <li class="list-group-item bg-transparent px-0 border-light d-flex align-items-center text-white">
-                                    <span class="badge bg-success rounded-circle p-2 me-3"><i class="bi bi-check"></i></span>
-                                    Comunicación efectiva
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6">
-                    <div class="card border-0 shadow-sm h-100 text-white bg-secondary">
-                        <div class="card-body p-4">
-                            <h2 class="h5 mb-4 fw-bold">Habilidades técnicas</h2>
-                            <div class="d-flex flex-wrap gap-2">
+                    <h2 class="h5 mb-4 fw-bold">Habilidades técnicas</h2>
+                    <div class="d-flex flex-wrap gap-2">
                                             <span class="badge rounded-pill text-bg-warning text-dark d-flex align-items-center p-2 px-3 shadow-sm">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Tabler Icons by Paweł Kuna - https://github.com/tabler/tabler-icons/blob/master/LICENSE --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m20 4l-2 14.5l-6 2l-6-2L4 4z"/><path d="M7.5 8h3v8l-2-1m8-7H14a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h1.423a.5.5 0 0 1 .495.57L15.5 15.5l-2 .5"/></g></svg>
                                     JavaScript (*)
                                 </span>
-                                <span class="badge rounded-pill text-bg-danger d-flex align-items-center p-2 px-3 shadow-sm">
+                        <span class="badge rounded-pill text-bg-danger d-flex align-items-center p-2 px-3 shadow-sm">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><!-- Icon from Academicons by James Walsh - https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL --><path fill="currentColor" d="M337.179 86.713C195.049 104.138 130.417 116.483 8 187.447l1.136 3.223l9.729.099c-.892 9.798-2.447 34.016-.461 70.433c-13.583 39.31-.345 66.015 12.087 95.065c1.97-30.216 1.768-63.31-7.512-96.246c-1.943-36.172-.347-59.956.53-69.207l81.152.775a371 371 0 0 0 2.403 47.57l.006.002q-1.702 9.985-1.703 21.161v164.964h79.367V269.517c-.013-8.703.945-16.233 2.858-22.611c20.455-3.355 39.75-10.883 56.958-22.184c13.423 6.674 20.14 21.6 20.14 44.795v155.77h79.353v-155.77q.086-48.862 40.373-48.847q40.287.014 40.287 48.847v155.77H504V260.322q-.016-50.991-35.412-77.164q-31.136-23.38-84.229-23.38q-58.072-.001-80.03 27.61c-3.877-4.202-8.25-7.917-13.113-11.16c-10.753-12.04-31.792-28.45-31.792-28.45l78.763-57.555z"/></svg>
                                      Moodle
                                 </span>
-                                <span class="badge rounded-pill text-bg-primary d-flex align-items-center p-2 px-3 shadow-sm">
+                        <span class="badge rounded-pill text-bg-primary d-flex align-items-center p-2 px-3 shadow-sm">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 100 100"><!-- Icon from Font-GIS by Jean-Marc Viglino - https://github.com/Viglino/font-gis/blob/main/LICENSE-CC-BY.md --><path fill="currentColor" d="M72.408.004a3 3 0 0 0-1.396 5.584c12.322 7.47 19.384 20.889 18.453 34.95c-.931 14.06-9.711 26.496-22.924 32.36s-28.677 4.158-40.203-4.423a3 3 0 1 0-3.584 4.812a45.3 45.3 0 0 0 8.336 4.916C24.33 80.083 20 83.117 20 87.143C20 94.243 32.381 100 50 100s30-5.757 30-12.857c0-3.97-4.205-6.98-10.805-8.864c15.069-6.784 25.181-21.113 26.256-37.345c1.08-16.312-7.147-31.88-21.33-40.477a3 3 0 0 0-1.713-.453M35.641 79.98A46.5 46.5 0 0 0 46.5 82.176v2.07a3.5 2.725 0 1 0 7 0v-2.031a46.5 46.5 0 0 0 11.139-2.18C70.315 81.282 74 83.226 74 85.43c0 3.787-10.745 6.857-24 6.857s-24-3.07-24-6.857c0-2.234 3.786-4.204 9.64-5.45" color="currentColor"/><path fill="currentColor" d="M63.789 5.387c-17.9-7.26-38.324 1.378-45.584 19.277c-7.26 17.898 1.378 38.322 19.278 45.58c17.866 7.247 38.245-1.35 45.539-19.182a1 1-2.615 0 0 .044-.094a1 1-2.615 0 0 .031-.088c7.196-17.877-1.438-38.246-19.308-45.493m-1 1.866c.583.301 1.156.62 1.706.978c-.536 1.448-1.3 4.248-4.056 3.02c-2.35-.803-6.65 3.534-6.414-.76c.935-1.871 5.841-4.417 1.248-4.63c-1.356.887-2.064 3.273-3.54 2.36c-1.388 1.805-2.482-.05-2.44-1.06c-.942.138-.08 1.82-1.18 2.084c3.139-.658-.638 2.156.383 3.688c-1.871.747-.804 5.03-3.305 3.042c-2.448-1.478 3.375-2.479-.39-2.401c-2.198-.365-2.556.829-1.171 1.743c-1.868.721-3.621.091-4.192-.806c-2.587.477-5.205 1.303-7.668 2.52c-2.532-.89-4.015 4.373-5.002 3.376c.495-1.597 2.032-3.874.3-4.156c-.346-.294-.78-.266-1.239-.044C34.75 5.958 49.471 1.956 62.79 7.253m4.278 2.07q.593.341 1.166.705c.465.434.707.864-.167.63l-.572-.495c-.43-.548-.517-.787-.427-.84m6.348 4.758c9.428 9.046 12.919 23.244 7.705 36.098c-3.442 8.487-10.017 14.751-17.846 18.01c1.344-1.482 2.465-3.284 4.248-4.258c1.824-2.315-.102-5.28 2.423-7.08c-1.402-.382-3.123-2.937-5.484-1.362c-1.7-.663-4.123.611-5.284-1.038c-1.585-2.085-3.392-4.505-2.957-7.276c1.055-1.87 1.475-4.646 2.404-6.4c2.218-2.787 5.504-3.67 7.294-6.587c.291-.102 2.692-.785 2.792-.814c2.452.326 6.915-2.012 6.792 2.097c.32.511 2.724 3.26 2.94 1.948c.835-1.848 5.43 1.201 3.854-2.298c-.203-.265-1.097-.971-1.845-1.056c-.303-.047-2.026.787-2.324-1.392c-.972-2.089-1.665 3.864-2.639.247c2.447.157-1.431-4.332-.869-2.408c.526 3.56-1.862.394-.487-1.355c-2.593-1.442-3.347 4.219-6.227 3.968c.016.01.036.014.053.023l-.47-.123l-.715-.216c-.37-.9-2.178-1.727-.877-3.368c-.346-2.482 1.117-2.781 3.094-1.759c2.61-.486-3.128-4.663 1.253-3.693c-1.841-.613-2.62-.849-1.954-3.157c-.828 2.862-3.68-.29-1.116-1.153c.923-.193-1.065-2.157 1.082-1.681c1.373.474 1.814 6.997 3.625 3.926c1.033.077-.025-2.387.435-2.31c-2.687-.206-1.688-4.666-1.072-6.237c.776.35 1.6.61 2.172.704m-22.503-7.9c-.18-.048-.56-.026-1.21.13c-.74.016-2.677 1.172-.698.538c1.184.266 2.448-.521 1.908-.667m22.352 10.016c-.319-.101.358 1.115.202.133a.7.7 0 0 0-.202-.133M47.004 5.979c-.255-.125-.69-.165-1.36-.067c-1.829-.567-3.499 3.284-3.353 3.07c.665-.136 1.56-1.016 2.213-.679c1.316.382 3.604-1.78 2.5-2.324m16.341 6.71c1.297.464 2.887 2.292-.022 1.513c-.449-.184-.91-.464-1.117-.928c.02-.726.55-.796 1.139-.585m9.605 4.485c-.513-.264 1.314 2.573.786.774c-.424-.487-.668-.713-.786-.774m-5.739-1.163c.18-.005.111.97-.166.194c.069-.14.125-.193.166-.194m1.77 1.266c.11.084.184 1.221-.11.38c.033-.32.073-.408.11-.38m5.55 2.258c-.268-.107-.362.182.156 1.223c-.202 1.175-.972 1.47.629.984c.595-.745-.338-2.027-.785-2.207M37.779 9.218c-.363-.2-.733 1.68.234.533c-.067-.33-.15-.487-.234-.533m5.712 3.209c-.24-.1-.246.557.303.41c-.119-.259-.224-.377-.303-.41m36.805 15.198c-.52-.143-.28 3.83.716 2.468c2.14.507.514-2.152-.236-1.595c-.2-.587-.36-.84-.48-.873M37.173 10.846c-.322-.054-1.233 1.683.094.147c-.014-.095-.048-.14-.094-.147m38.488 17.74c-.113-.01.015.345.606 1.32c.34.032 1.27 2.032 1.238 1.108c-.34-.798-1.442-2.193-1.78-2.4a.2.2 0 0 0-.064-.027M35.68 12.39c-.295-.194-1.363.643.04.326c.054-.181.027-.281-.04-.326m43.76 19.434c-.197.004.133 1.418.395.602c-.205-.447-.329-.603-.395-.602m-7.272-1.2c.43.1-.564 1.858-.977.624c.533-.508.834-.658.977-.625m7.996 4.003c.462.121.335 1.521-.65.445c.275-.383.496-.485.65-.445m-24.43-7.809c.457.235.058.966-.76.013c.36-.114.607-.091.76-.013m1.232 1.068c.163.151-.498.692-.495.037c.293-.095.44-.087.495-.037m3.814 5.382c.295.044-.217.961-.348.14c.169-.114.28-.15.348-.14M28.13 20.349c.178.07.035 1.556-.292.546c.136-.436.232-.57.291-.546m-.787.928c.166.102-.61 1.765-.546.581c.33-.476.49-.615.546-.581M24 20.529c.284.352-1.833 2.619-1.71 3.432c.48 2.416-2.977 4.98-.276 6.841c1.876-1.61 2.104.634 2.437.483c1.036.221.756 2.887 2.62 3.268c2.096.603-.5 4.15 2.063 5.698c2.954 2.327.788 6.672 4.248 8.724c1.662 2.16 7.54 5.194 4.206 7.923c-3.331.02-3.61 5.962-7.402 3.241c-1.034-.108-1.814.662-2.756 1.008a32.9 32.9 0 0 1-7.3-11.024c-.621-3.193-2.147-6.179-2.04-9.514c-1.085-3.79 1.998-6.14 2.765-9.322c.512-1.643-.908.736-.621-1.494c-.135-1.97.468-4.256.794-6.302a33 33 0 0 1 1.78-3.21a1.9 1.9 0 0 0-.064.66c.8-.432 1.161-.529 1.256-.412m1.308.56c.173.092.398.261.69.525c-.088 2.06 1.421 3.353.606 3.945c1.055 1.014 1.922 4.146-.614 1.873c-1.65-1.595 1.297-1.23-.78-2.803c.307-1.018-1.108-4.18.098-3.54m36.577 15.413c.295.119.044 1.404-.742.842c.36-.71.608-.897.742-.842M27.343 23.109c.116.086.178.525-.118.907l-.108-.158c-.001-.537.088-.746.174-.763a.07.07 0 0 1 .052.014m32.088 13.077c.858.292 2.072 1.58.122.864l-.648-.263l-.092-.1c-.088-.56.228-.634.618-.501m-34.874-11.39c.344.23.94 1.877-.131.937c-.129-.855-.025-1.043.131-.938m3.537 3.562c.491.131.61 1.644-.581.48c.211-.414.417-.523.58-.48m1.317 3.287c.16.151-.829 3.08-.787 1.523l.165-.48c.389-.836.57-1.093.622-1.043m21.979 11.13c.34.183 1.17 1.374.068.65c-.275-.607-.223-.732-.068-.65m1.58 1.106c.324.126-.193 1.059-.373.076c.179-.09.298-.105.373-.076m-.635.737c.527.12-.261.944-.597.059c.284-.077.475-.087.597-.06m-.889-.214c.175.093-.287.934-.422.24c.236-.22.364-.271.422-.24M67.95 58.13c.175.093-.287.934-.422.24c.236-.22.364-.271.422-.24" color="currentColor"/></svg>
                                      Q-GIS Geomatica
                                 </span>
-                            </div>
-                            <small>(*) en formación</small>
-                        </div>
                     </div>
-                </div>
-            </section>
-
-            <section class="card border-0 shadow-sm overflow-hidden text-white bg-secondary">
-                <div class="card-body p-0">
-                    <div class="p-4 border-bottom">
-                        <h2 class="h5 fw-bold mb-0">Ubicación</h2>
-                    </div>
-                    <div class="ratio ratio-21x9">
-                        <iframe class="embed-responsive-16by9" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d856.87924113832!2d-70.58537142038213!3d-33.42474679509563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sbr!4v1779764543720!5m2!1ses!2sbr"allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="border-0"></iframe>
-                    </div>
-                </div>
-            </section>
-
-        </main>
-    </div>
-</div>
-
-<!-- FOOTER - Pie de pagina donde puede ir información de contacto u otra barra de navegación -->
-<footer class="bg-dark py-5 mt-5 border-top shadow-sm">
-    <div class="container">
-        <div class="row justify-content-center">
-
-            <div class="col-lg-6 col-md-8 mb-5 mb-lg-0 ">
-                <div class="card border-0 p-4 rounded-4 shadow-sm text-white bg-secondary">
-                    <div class="card-body text-white bg-secondary">
-                        <h4 class="card-title fw-bold mb-4 text-center">Envíame un mensaje</h4>
-                        <form action="#" method="post">
-                            <div class="form-floating mb-3">
-                                <input type="text" id="nombre" name="nombre" class="form-control rounded-3 border-0 shadow-sm" placeholder="Tu nombre">
-                                <label for="nombre" class="text-muted">Nombre completo</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="email" id="email" name="email" class="form-control rounded-3 border-0 shadow-sm" placeholder="tu@email.com">
-                                <label for="email" class="text-muted">Correo electrónico</label>
-                            </div>
-                            <div class="form-floating mb-4">
-                                <textarea id="mensaje" name="mensaje" class="form-control rounded-3 border-0 shadow-sm" placeholder="Escribe tu mensaje aquí..." style="height: 120px"></textarea>
-                                <label for="mensaje" class="text-muted">Mensaje</label>
-                            </div>
-                            <button name="enviar" type="submit" class="btn btn-warning btn-lg w-100 rounded-pill shadow-sm fw-bold">Enviar Mensaje</button>
-                        </form>
-                    </div>
+                    <small>(*) en formación</small>
                 </div>
             </div>
+        </div>
+    </section>
+                    </blockquote>
+</div>
+</div>
+</section>
+<!-- Section: Formación Académica -->
+<section class="py-section-gap bg-surface-container-low transition-colors duration-500" id="formacion">
+<div class="px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+<div>
+<div class="flex items-center gap-4 mb-2">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><path fill="currentColor" d="M14.217 3.5a5.17 5.17 0 0 0-4.434 0L5.489 5.512a2.25 2.25 0 0 1 .647 4.306l-1.076.461c-.534.23-.837.362-1.042.467l-.003.05L9.783 13.5a5.17 5.17 0 0 0 4.434 0l6.691-3.137c1.456-.682 1.456-3.044 0-3.726z"/><path fill="currentColor" d="M5.545 8.44a.75.75 0 0 0-.59-1.38l-1.112.477c-.557.239-1.03.441-1.4.65c-.395.222-.734.482-.989.868c-.254.386-.36.8-.408 1.25C1 10.729 1 11.243 1 11.85v2.901a.75.75 0 0 0 1.5 0v-2.862c0-.656.001-1.088.037-1.421c.034-.315.093-.47.17-.586c.075-.115.195-.231.471-.387c.292-.164.689-.335 1.292-.593z"/><path fill="currentColor" d="M5 11.258L9.783 13.5a5.17 5.17 0 0 0 4.434 0L19 11.258v5.367c0 1.008-.503 1.952-1.385 2.44C16.146 19.88 13.796 21 12 21s-4.146-1.121-5.615-1.935C5.504 18.577 5 17.633 5 16.625z" opacity=".5"/></svg>
+</div>
+<h2 class="font-headline-md text-headline-md uppercase text-[#BC544B]">Formación Académica</h2>
+</div>
 
-            <div class="col-12 text-center mt-4 text-warning">
-                <h4 class="h6 fw-bold mb-3 text-uppercase text-muted" style="letter-spacing: 2px;">Conecta Conmigo</h4>
-                <div class="d-flex justify-content-center gap-4">
-                    <a class=text-center" href="https://www.linkedin.com/in/prof-roberto-torres/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Line Icons by Vjacheslav Trushkin - https://github.com/cyberalien/line-md/blob/master/license.txt --><circle cx="4" cy="4" r="2" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" dur="0.15s" values="0;1"/></circle><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"><path stroke-dasharray="12" stroke-dashoffset="12" d="M4 10v10"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.15s" dur="0.2s" values="12;0"/></path><path stroke-dasharray="12" stroke-dashoffset="12" d="M10 10v10"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.45s" dur="0.2s" values="12;0"/></path><path stroke-dasharray="24" stroke-dashoffset="24" d="M10 15c0 -2.76 2.24 -5 5 -5c2.76 0 5 2.24 5 5v5"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.65s" dur="0.2s" values="24;0"/></path></g></svg></a>
-                    <a class=text-center" href="https://ufro.academia.edu/RobertoTorres" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="32" viewBox="0 0 448 512"><!-- Icon from Academicons by James Walsh - https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL --><path fill="currentColor" d="M48 32C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm159.793 64c13.85-.01 27.699.065 41.549.305c37.902 95.77 76.875 191.171 115.293 286.758c3.867 10.939 16.282 13.776 26.338 15.802c0 5.709.035 11.417.035 17.127c-50.02-.038-100.04.037-150.063-.037c0-5.745.035-11.455.035-17.164c12.525-.956 28.658-.218 36.1-12.56c2.874-9.577-.33-19.56-3.867-28.473a40245 40245 0 0 0-15.914-39.635c-38.64-.146-77.24.112-115.881-.11c-6.961 16.245-13.004 32.859-19.377 49.323c-2.651 7.256-5.487 16.908.922 23.096c8.14 6.925 19.633 6.74 29.652 8.287c.036 5.746.036 11.493.072 17.275c-31.898-.037-63.796.074-95.695-.074c0-5.673.035-11.344.035-16.98c9.76-2.025 21.954-4.422 25.674-15.141c32.931-84.131 65.898-168.297 98.35-252.611c-5.342-11.494-9.652-23.426-14.809-34.993c13.85-.092 27.701-.186 41.551-.195m-9.836 73.533c-14.513 39.45-30.204 78.494-45.012 117.834a9679 9679 0 0 0 92.123 0c-15.691-39.266-31.455-78.53-47.111-117.834"/></svg>
-                        <a class=text-center" href="https://github.com/apt-get-Repu" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Line Icons by Vjacheslav Trushkin - https://github.com/cyberalien/line-md/blob/master/license.txt --><mask id="SVGtXXaGeHA" width="24" height="24" x="0" y="0"><g fill="#fff"><ellipse cx="9.5" cy="9" rx="1.5" ry="1"/><ellipse cx="14.5" cy="9" rx="1.5" ry="1"/></g></mask><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="32" stroke-dashoffset="32" d="M12 4c1.67 0 2.61 0.4 3 0.5c0.53 -0.43 1.94 -1.5 3.5 -1.5c0.34 1 0.29 2.22 0 3c0.75 1 1 2 1 3.5c0 2.19 -0.48 3.58 -1.5 4.5c-1.02 0.92 -2.11 1.37 -3.5 1.5c0.65 0.54 0.5 1.87 0.5 2.5c0 0.73 0 3 0 3M12 4c-1.67 0 -2.61 0.4 -3 0.5c-0.53 -0.43 -1.94 -1.5 -3.5 -1.5c-0.34 1 -0.29 2.22 0 3c-0.75 1 -1 2 -1 3.5c0 2.19 0.48 3.58 1.5 4.5c1.02 0.92 2.11 1.37 3.5 1.5c-0.65 0.54 -0.5 1.87 -0.5 2.5c0 0.73 0 3 0 3"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.7s" values="32;0"/></path><path stroke-dasharray="10" stroke-dashoffset="10" d="M9 19c-1.406 0-2.844-.563-3.688-1.188C4.47 17.188 4.22 16.157 3 15.5"><animate attributeName="d" dur="3s" repeatCount="indefinite" values="M9 19c-1.406 0-2.844-.563-3.688-1.188C4.47 17.188 4.22 16.157 3 15.5;M9 19c-1.406 0-3-.5-4-.5-.532 0-1 0-2-.5;M9 19c-1.406 0-2.844-.563-3.688-1.188C4.47 17.188 4.22 16.157 3 15.5"/><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.8s" dur="0.2s" values="10;0"/></path></g><rect width="8" height="4" x="8" y="11" fill="currentColor" mask="url(#SVGtXXaGeHA)"><animate attributeName="y" dur="10s" keyTimes="0;0.45;0.46;0.54;0.55;1" repeatCount="indefinite" values="11;11;7;7;11;11"/> </rect> </svg> </a>
+</div>
+<div class="double-divider transition-all"></div>
+<div class="grid gap-12">
+<div class="grid md:grid-cols-12 gap-4 border-b border-outline-variant pb-8 transition-colors">
+<div class="md:col-span-3">
+<span class="font-label-caps text-label-caps text-black transition-colors">2026- a la fecha</span>
+</div>
+<div class="md:col-span-9">
+<h3 class="font-headline-sm text-headline-sm text-[#BC544B] mb-2 transition-colors">Desarrollo de aplicaciones fullstack JavaScript</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-4 uppercase tracking-wider transition-colors">Talento Digital</p>
+<p class="font-body-md text-body-md text-on-surface transition-colors">Especialización en el desarrollo y mejoramiento de aplicaciones web fullstack basado en el lenguaje Javascript</p>
+</div>
+</div>
+<div class="grid md:grid-cols-12 gap-4 border-b border-outline-variant pb-8 transition-colors">
+<div class="md:col-span-3">
+<span class="font-label-caps text-label-caps text-black transition-colors">2026</span>
+</div>
+<div class="md:col-span-9">
+<h3 class="font-headline-sm text-headline-sm text-[#BC544B] mb-2 transition-colors">Creación de juegos de mesa educativos y material didáctico</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-4 uppercase tracking-wider transition-colors">Observatorio del Juego</p>
+<p class="font-body-md text-body-md text-on-surface transition-colors">Diplomado de creación de juegos de mesa, especializado en el enfoque educativo</p>
+</div>
+</div>
+<div class="grid md:grid-cols-12 gap-4">
+<div class="md:col-span-3">
+<span class="font-label-caps text-label-caps text-black transition-colors">2012 — 2019</span>
+</div>
+<div class="md:col-span-9">
+<h3 class="font-headline-sm text-headline-sm text-[#BC544B] mb-2 transition-colors">Profesor de Estado en historia, geografía y educación cívica</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-4 uppercase tracking-wider transition-colors">Universidad de La Frontera</p>
+<p class="font-body-md text-body-md text-on-surface transition-colors">Formación pedagógica centrada en la interculturalidad y la enseñanza del pensamiento historico. </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Experiencia Laboral -->
+<section class="py-section-gap px-margin-mobile md:px-gutter max-w-container-max mx-auto transition-colors duration-500" id="experiencia">
+<div class="flex items-center gap-4 mb-2">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="M4 21q-.825 0-1.412-.587T2 19V8q0-.825.588-1.412T4 6h4V4q0-.825.588-1.412T10 2h4q.825 0 1.413.588T16 4v2h4q.825 0 1.413.588T22 8v11q0 .825-.587 1.413T20 21zm6-15h4V4h-4z"/></svg>
+</div>
+<h2 class="font-headline-md text-headline-md mb-12 text-[#BC544B]">Experiencia Laboral</h2>
+<div class="space-y-16">
+<!-- Job 1 -->
+<div class="group relative">
+<div class="absolute -left-6 top-0 h-full w-[2px] bg-[#BC544B] scale-y-0 group-hover:scale-y-100 transition-transform origin-top hidden md:block"></div>
+<div class="flex flex-col md:flex-row gap-8">
+<div class="md:w-1/4">
+<div class="p-4 bg-[#BC544B] text-surface dark:text-background text-center transition-all">
+<span class="font-label-caps text-label-caps">2022 - 2024</span>
+</div>
+</div>
+<div class="md:w-3/4">
+<h3 class="font-headline-sm text-headline-sm text-[#BC544B] transition-colors">Profesor Volante</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1 mb-6 transition-colors">Boston College Maipú</p>
+<ul class="space-y-4 font-body-md text-body-md list-none">
+<li class="flex items-start gap-3">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="M5.616 20q-.672 0-1.144-.472T4 18.385V5.615q0-.67.472-1.143Q4.944 4 5.616 4h12.769q.257 0 .49.076t.427.228l-.83.83q-.058-.057-.145-.096T18.125 5H5.615q-.269 0-.442.173T5 5.616v12.769q0 .269.173.442t.443.173h12.769q.269 0 .442-.173t.173-.443V11.64l1-1v7.746q0 .67-.472 1.143q-.472.472-1.143.472zm5.909-3.712l-4.554-4.553l.708-.708l3.865 3.865l8.79-8.79l.695.683z"/></svg>
+<span class="text-on-surface transition-colors">Volantias en todas las asignaturas con trabajo de actividades planificadas de las asignaturas.</span>
+</li>
+<li class="flex items-start gap-3">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="M5.616 20q-.672 0-1.144-.472T4 18.385V5.615q0-.67.472-1.143Q4.944 4 5.616 4h12.769q.257 0 .49.076t.427.228l-.83.83q-.058-.057-.145-.096T18.125 5H5.615q-.269 0-.442.173T5 5.616v12.769q0 .269.173.442t.443.173h12.769q.269 0 .442-.173t.173-.443V11.64l1-1v7.746q0 .67-.472 1.143q-.472.472-1.143.472zm5.909-3.712l-4.554-4.553l.708-.708l3.865 3.865l8.79-8.79l.695.683z"/></svg>
+<span class="text-on-surface transition-colors">Realización de talleres jornada escolar completa (JEC) en segundo medio “Juegos de rol e historia”.</span>
+</li>
+<li class="flex items-start gap-3">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="M5.616 20q-.672 0-1.144-.472T4 18.385V5.615q0-.67.472-1.143Q4.944 4 5.616 4h12.769q.257 0 .49.076t.427.228l-.83.83q-.058-.057-.145-.096T18.125 5H5.615q-.269 0-.442.173T5 5.616v12.769q0 .269.173.442t.443.173h12.769q.269 0 .442-.173t.173-.443V11.64l1-1v7.746q0 .67-.472 1.143q-.472.472-1.143.472zm5.909-3.712l-4.554-4.553l.708-.708l3.865 3.865l8.79-8.79l.695.683z"/></svg>
+<span class="text-on-surface transition-colors">Coordinador ensayos PAES dentro del establecimiento.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Job 2 -->
+<div class="group relative">
+<div class="absolute -left-6 top-0 h-full w-[2px] bg-[#BC544B] scale-y-0 group-hover:scale-y-100 transition-transform origin-top hidden md:block"></div>
+<div class="flex flex-col md:flex-row gap-8">
+<div class="md:w-1/4">
+<div class="p-4 border border-[#BC544B] text-center transition-all">
+<span class="font-label-caps text-label-caps text-[#BC544B] transition-colors">2019</span>
+</div>
+</div>
+<div class="md:w-3/4">
+<h3 class="font-headline-sm text-headline-sm text-[#BC544B] transition-colors">Profesor asistente</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1 mb-6 transition-colors">Universidad de La Frontera</p>
+<ul class="space-y-4 font-body-md text-body-md list-none">
+<li class="flex items-start gap-3">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="M5.616 20q-.672 0-1.144-.472T4 18.385V5.615q0-.67.472-1.143Q4.944 4 5.616 4h12.769q.257 0 .49.076t.427.228l-.83.83q-.058-.057-.145-.096T18.125 5H5.615q-.269 0-.442.173T5 5.616v12.769q0 .269.173.442t.443.173h12.769q.269 0 .442-.173t.173-.443V11.64l1-1v7.746q0 .67-.472 1.143q-.472.472-1.143.472zm5.909-3.712l-4.554-4.553l.708-.708l3.865 3.865l8.79-8.79l.695.683z"/></svg>
+<span class="text-on-surface transition-colors">Proyecto formación de profesores en educación para personas jóvenes y adultas (EPJA).</span>
+</li>
+<li class="flex items-start gap-3">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="M5.616 20q-.672 0-1.144-.472T4 18.385V5.615q0-.67.472-1.143Q4.944 4 5.616 4h12.769q.257 0 .49.076t.427.228l-.83.83q-.058-.057-.145-.096T18.125 5H5.615q-.269 0-.442.173T5 5.616v12.769q0 .269.173.442t.443.173h12.769q.269 0 .442-.173t.173-.443V11.64l1-1v7.746q0 .67-.472 1.143q-.472.472-1.143.472zm5.909-3.712l-4.554-4.553l.708-.708l3.865 3.865l8.79-8.79l.695.683z"/></svg>
+<span class="text-on-surface transition-colors">Encargado en gestión y diseño unidad educativa para profesores “Cultura y diversidad en el aula”.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Section: Portafolio -->
+<section class="py-section-gap bg-surface-container transition-colors duration-500" id="portafolio">
+<div class="px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<div class="flex items-center justify-center gap-4 mb-2">
+    <div class="w-16 h-[1px] bg-black transition-colors"></div>
+<span class="font-label-caps text-label-caps">Portafolio</span>
+    <div class="w-16 h-[1px] bg-black transition-colors"></div>
+</div>
+<h2 class="font-headline-md text-headline-md text-[#BC544B]">Portafolio de Proyectos Seleccionados</h2>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l transition-colors">
+<!-- Project 1 -->
+<div class="border-r border-b group overflow-hidden bg-surface dark:bg-background transition-colors">
+<div class="aspect-square overflow-hidden">
+<img alt="Type Archive Project" class="w-full h-full object-cover grayscale-img group-hover:scale-105" src="static/images/EDU.jpg"/>
+</div>
+<div class="p-8">
+<span class="font-label-caps text-label-caps text-black mb-2 block transition-colors">Educación</span>
+<h3 class="font-headline-sm text-headline-sm mb-4 transition-colors">Actividades y aplicaciones de trabajo en educación.</h3>
+<p class="font-body-md text-body-md text-on-surface mb-6 transition-colors">Registro de actividades educativas realizadas.</p>
+<a class="font-label-caps text-label-caps text-[#BC544B] hover:underline underline-offset-4 flex items-center gap-2 transition-colors" href="#">VER PORTAFOLIO <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 14 14"><!-- Icon from Streamline by Streamline - https://creativecommons.org/licenses/by/4.0/ --><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M7 6.546c-.748-.553-1.869-1.52-5.083-1.52v6.924c3.214 0 4.335.967 5.083 1.52zm0 0c.748-.553 1.869-1.52 5.083-1.52v6.924c-3.214 0-4.335.967-5.083 1.52zM10.763.521H4.086a1 1 0 0 0-.528.15L1.801 1.765l1.757 1.092a1 1 0 0 0 .528.15h6.677a1.243 1.243 0 1 0 0-2.485M8.986.575v2.432"/></svg></a>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="border-r border-b group overflow-hidden bg-surface dark:bg-background transition-colors">
+<div class="aspect-square overflow-hidden">
+<img alt="Fintech Interface" class="w-full h-full object-cover grayscale-img group-hover:scale-105" src="static/images/JUE.jpg"/>
+</div>
+<div class="p-8">
+<span class="font-label-caps text-label-caps text-black mb-2 block transition-colors">Juegos de Mesa</span>
+<h3 class="font-headline-sm text-headline-sm mb-4 transition-colors">Diseño de juegos de Mesa</h3>
+<p class="font-body-md text-body-md text-on-surface mb-6 transition-colors">Diseño de juegos de mesa y creación de reglas alternativas para juegos de mesa de diversa complejidad.</p>
+<a class="font-label-caps text-label-caps text-[#BC544B] hover:underline underline-offset-4 flex items-center gap-2 transition-colors" href="#">VER PORTAFOLIO <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><!-- Icon from Game Icons by GameIcons - https://github.com/game-icons/icons/blob/master/license.txt --><path fill="currentColor" d="M192.215 39.565c-48.32 6.48-43.031 58.948-42.874 75.82l93.895 13.622c1.004-35.647 5.621-59.868 13.545-76.27c2.186-4.523 4.704-8.455 7.469-11.836zm107.012 2.48q-1.755.034-3.57.226c-8.898.937-15.873 4.232-22.669 18.296c-6.795 14.065-11.916 39.331-12.095 80.59l-.026 5.95l-5.484 2.306c-50.104 21.083-82.1 39.796-100.16 55.334s-21.362 26.305-19.541 34.088s10.734 16.375 25.353 23.44c14.62 7.064 33.96 12.409 52.951 15.634l11.293 1.918l-83.045 192.608l120.118-32.106l51.136-112.484l51.045 86.37l113.43-30.929l-86.887-142.223l10.647-3.617c15.087-5.126 32.096-12.698 45.673-21.45c13.578-8.753 23.156-18.91 25.407-26.64c1.125-3.864.992-7.055-1.028-11.146c-2.02-4.09-6.362-9.116-14.296-14.488c-15.869-10.744-45.623-22.39-93.485-32.809l-6.672-1.453l-.398-6.816c-.762-13.052-6.589-35.803-17.293-53.27c-9.366-15.284-21.176-26.136-36.961-27.242a39 39 0 0 0-3.443-.086zm-170.685 87.41c-79.404 44.697-85.83 54.663-86.757 71.6c-2.209 40.397 42.597 46.791 89.698 59.957c-6.026-5.765-11.447-10.033-13.329-18.075c-3.82-16.327 4.783-34.158 25.328-51.834c17.067-14.684 43.279-30.404 80.907-47.62zM93.291 271.788c-22.445 48.26-38.283 103.023-59.254 153.977l87.723 43.328l17.77-35.852l57.154-132.556zm222.283 94.963l-15.752 34.648l43.543 12.375z"/></svg></a>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="border-r border-b group overflow-hidden bg-surface dark:bg-background transition-colors">
+<div class="aspect-square overflow-hidden">
+<img alt="Editorial Books" class="w-full h-full object-cover grayscale-img group-hover:scale-105" src="static/images/DEV.jpg"/>
+</div>
+<div class="p-8">
+<span class="font-label-caps text-label-caps text-black mb-2 block transition-colors">Desarrollo Web</span>
+<h3 class="font-headline-sm text-headline-sm mb-4 transition-colors">Diseño y Mantención Fullstack basado en JavaScript</h3>
+<p class="font-body-md text-body-md text-on-surface mb-6 transition-colors">Paginas y aplicaciones web creadas y editadas</p>
+<a class="font-label-caps text-label-caps text-[#BC544B] hover:underline underline-offset-4 flex items-center gap-2 transition-colors" href="#">VER PORTAFOLIO <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Iconoir by Luca Burgio - https://github.com/iconoir-icons/iconoir/blob/main/LICENSE --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M6.818 22v-2.857C6.662 17.592 5.633 16.416 4.682 15m9.772 7v-1.714c4.91 0 4.364-5.714 4.364-5.714s2.182 0 2.182-2.286l-2.182-3.428c0-4.572-3.709-6.816-7.636-6.857c-2.2-.023-3.957.53-5.27 1.499"/><path d="m13 7l2 2.5l-2 2.5M5 7L3 9.5L5 12m5-6l-2 7"/></g></svg></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Contáctame -->
+<section class="py-section-gap px-margin-mobile md:px-gutter max-w-container-max mx-auto transition-colors duration-500" id="contacto">
+<div class="max-w-3xl mx-auto">
+<div class="flex items-center gap-4 mb-2">
+<div class="w-16 h-[1px] bg-black transition-colors"></div>
+<span class="font-label-caps text-label-caps">Contacto</span>
+<div class="w-16 h-[1px] bg-black transition-colors"></div>
+</div>
+<h2 class="font-headline-md text-headline-md mb-8 text-[#BC544B]">Comunicate conmigo</h2>
+<p class="font-body-lg text-body-lg text-on-surface mb-12 transition-colors">
+                    Utiliza este canal para contactarme.
+                </p>
+
+    <form action="#" method="post">
+        <div class="form-floating mb-3">
+            <input type="text" id="nombre" name="nombre" class="form-control rounded-3 border-0 shadow-sm" placeholder="Tu nombre">
+            <label for="nombre" class="text-muted">Nombre completo</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" id="email" name="email" class="form-control rounded-3 border-0 shadow-sm" placeholder="tu@email.com">
+            <label for="email" class="text-muted">Correo electrónico</label>
+        </div>
+        <div class="form-floating mb-4">
+            <textarea id="mensaje" name="mensaje" class="form-control rounded-3 border-0 shadow-sm" placeholder="Escribe tu mensaje aquí..." style="height: 120px"></textarea>
+            <label for="mensaje" class="text-muted">Mensaje</label>
+        </div>
+        <button name="enviar" type="submit" class="items-center gap-2 font-label-caps text-label-caps rounded border-transparent btn-archive transition-all bg-surface/50 dark:bg-transparent backdrop-blur-[2px] dark:backdrop-blur-none btn btn-lg w-100 rounded-pill shadow-sm fw-bold transition-all bg-surface/50 dark:bg-transparent backdrop-blur-[2px] dark:backdrop-blur-none">Enviar Mensaje</button>
+
+
+    </form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container border-t transition-all duration-500">
+<div class="flex flex-col md:flex-row justify-between items-center w-full py-section-gap px-margin-mobile md:px-gutter max-w-container-max mx-auto gap-8">
+<div class="flex flex-col items-center md:items-start">
+<div class="font-headline-sm text-headline-sm mb-2 transition-colors">CV | Roberto Torres</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant text-center md:text-left transition-colors">2026 versión 1,0</p>
+</div>
+<div class="flex gap-10">
+    <a class=text-center" href="https://www.linkedin.com/in/prof-roberto-torres/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Line Icons by Vjacheslav Trushkin - https://github.com/cyberalien/line-md/blob/master/license.txt --><circle cx="4" cy="4" r="2" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" dur="0.15s" values="0;1"/></circle><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"><path stroke-dasharray="12" stroke-dashoffset="12" d="M4 10v10"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.15s" dur="0.2s" values="12;0"/></path><path stroke-dasharray="12" stroke-dashoffset="12" d="M10 10v10"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.45s" dur="0.2s" values="12;0"/></path><path stroke-dasharray="24" stroke-dashoffset="24" d="M10 15c0 -2.76 2.24 -5 5 -5c2.76 0 5 2.24 5 5v5"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.65s" dur="0.2s" values="24;0"/></path></g></svg></a>
+    <a class=text-center" href="https://ufro.academia.edu/RobertoTorres" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="32" viewBox="0 0 448 512"><!-- Icon from Academicons by James Walsh - https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL --><path fill="currentColor" d="M48 32C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm159.793 64c13.85-.01 27.699.065 41.549.305c37.902 95.77 76.875 191.171 115.293 286.758c3.867 10.939 16.282 13.776 26.338 15.802c0 5.709.035 11.417.035 17.127c-50.02-.038-100.04.037-150.063-.037c0-5.745.035-11.455.035-17.164c12.525-.956 28.658-.218 36.1-12.56c2.874-9.577-.33-19.56-3.867-28.473a40245 40245 0 0 0-15.914-39.635c-38.64-.146-77.24.112-115.881-.11c-6.961 16.245-13.004 32.859-19.377 49.323c-2.651 7.256-5.487 16.908.922 23.096c8.14 6.925 19.633 6.74 29.652 8.287c.036 5.746.036 11.493.072 17.275c-31.898-.037-63.796.074-95.695-.074c0-5.673.035-11.344.035-16.98c9.76-2.025 21.954-4.422 25.674-15.141c32.931-84.131 65.898-168.297 98.35-252.611c-5.342-11.494-9.652-23.426-14.809-34.993c13.85-.092 27.701-.186 41.551-.195m-9.836 73.533c-14.513 39.45-30.204 78.494-45.012 117.834a9679 9679 0 0 0 92.123 0c-15.691-39.266-31.455-78.53-47.111-117.834"/></svg>
+    <a class=text-center" href="https://github.com/apt-get-Repu" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Line Icons by Vjacheslav Trushkin - https://github.com/cyberalien/line-md/blob/master/license.txt --><mask id="SVGtXXaGeHA" width="24" height="24" x="0" y="0"><g fill="#fff"><ellipse cx="9.5" cy="9" rx="1.5" ry="1"/><ellipse cx="14.5" cy="9" rx="1.5" ry="1"/></g></mask><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="32" stroke-dashoffset="32" d="M12 4c1.67 0 2.61 0.4 3 0.5c0.53 -0.43 1.94 -1.5 3.5 -1.5c0.34 1 0.29 2.22 0 3c0.75 1 1 2 1 3.5c0 2.19 -0.48 3.58 -1.5 4.5c-1.02 0.92 -2.11 1.37 -3.5 1.5c0.65 0.54 0.5 1.87 0.5 2.5c0 0.73 0 3 0 3M12 4c-1.67 0 -2.61 0.4 -3 0.5c-0.53 -0.43 -1.94 -1.5 -3.5 -1.5c-0.34 1 -0.29 2.22 0 3c-0.75 1 -1 2 -1 3.5c0 2.19 0.48 3.58 1.5 4.5c1.02 0.92 2.11 1.37 3.5 1.5c-0.65 0.54 -0.5 1.87 -0.5 2.5c0 0.73 0 3 0 3"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.7s" values="32;0"/></path><path stroke-dasharray="10" stroke-dashoffset="10" d="M9 19c-1.406 0-2.844-.563-3.688-1.188C4.47 17.188 4.22 16.157 3 15.5"><animate attributeName="d" dur="3s" repeatCount="indefinite" values="M9 19c-1.406 0-2.844-.563-3.688-1.188C4.47 17.188 4.22 16.157 3 15.5;M9 19c-1.406 0-3-.5-4-.5-.532 0-1 0-2-.5;M9 19c-1.406 0-2.844-.563-3.688-1.188C4.47 17.188 4.22 16.157 3 15.5"/><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.8s" dur="0.2s" values="10;0"/></path></g><rect width="8" height="4" x="8" y="11" fill="currentColor" mask="url(#SVGtXXaGeHA)"><animate attributeName="y" dur="10s" keyTimes="0;0.45;0.46;0.54;0.55;1" repeatCount="indefinite" values="11;11;7;7;11;11"/> </rect> </svg> </a>
+    <a class=text-center" href="https://boardgamegeek.com/profile/Repu676" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Simple Icons by Simple Icons Collaborators - https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md --><path fill="currentColor" d="m19.7 4.44l-2.38.64L19.65 0L4.53 5.56l.83 6.67l-1.4 1.34L8.12 24l8.85-3.26l3.07-7.22l-1.32-1.27z"/></svg></a>
+</div>
+</div>
 </footer>
+<script>
+        // Theme Switch Logic
+        const toggleBtn = document.getElementById('theme-toggle');
+        const curtain = document.getElementById('theme-curtain');
+        const themeIcon = document.getElementById('theme-icon');
+        const html = document.documentElement;
 
+        toggleBtn.addEventListener('click', () => {
+            curtain.classList.remove('active');
+            void curtain.offsetWidth; 
+            
+            curtain.style.left = "-100%";
+            curtain.style.transform = "translateX(100%)";
+            
+            setTimeout(() => {
+                const isDark = html.classList.toggle('dark');
+                themeIcon.textContent = isDark ? 'light_mode' : 'dark_mode';
+                curtain.style.backgroundColor = isDark ? "#fcf9ee" : "#1c1c16";
+            }, 400);
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</a>
-</div>
-</div>
-</div>
-</div>
-</footer>
+            setTimeout(() => {
+                curtain.style.transform = "translateX(200%)";
+            }, 410);
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
-</html>
+            setTimeout(() => {
+                curtain.style.transition = 'none';
+                curtain.style.transform = "translateX(0)";
+                curtain.style.left = "-100%";
+                void curtain.offsetWidth;
+                curtain.style.transition = "transform 0.8s cubic-bezier(0.77, 0, 0.175, 1)";
+            }, 850);
+        });
+
+        // Combined interaction logic for Hero: Tracks mouse for discovery effects
+        const hero = document.getElementById('inicio');
+        if (hero) {
+            hero.addEventListener('mousemove', (e) => {
+                const rect = hero.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                
+                hero.style.setProperty('--mouse-x', `${x}%`);
+                hero.style.setProperty('--mouse-y', `${y}%`);
+            });
+        }
+
+        // Parallax effect on hero background text
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const bgText = document.querySelector('.absolute.-bottom-10');
+            if(bgText && window.scrollY < 1200) {
+                bgText.style.transform = `translateY(${scrolled * 0.1}px)`;
+            }
+        });
+
+        // Smooth scroll for anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body></html>
